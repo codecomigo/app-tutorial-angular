@@ -31,6 +31,8 @@ filterResults(filterText: string) {
     this.filteredLocationList = this.housingLocationList;
     alert('Enter something to search!');
     return;
+  } else if (this.filteredLocationList.length == 0){
+    alert('No match!');
   }
   this.filteredLocationList = this.housingLocationList.filter(
     housingLocation => housingLocation?.city.toLowerCase().includes(filterText.toLowerCase())
