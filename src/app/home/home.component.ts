@@ -1,4 +1,4 @@
-import { Component, inject  } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { HousingLocation } from '../housinglocation';
@@ -26,18 +26,18 @@ import { HousingService } from '../housing.service';
 
 export class HomeComponent {
 
-filterResults(filterText: string) {
-  if (!filterText) {
-    this.filteredLocationList = this.housingLocationList;
-    alert('Enter something to search!');
-    return;
-  } else if (this.filteredLocationList.length == 0){
-    alert('No match!');
+  filterResults(filterText: string) {
+    if (!filterText) {
+      this.filteredLocationList = this.housingLocationList;
+      alert('Enter something to search!');
+      return;
+    } else if (this.filteredLocationList.length == 0) {
+      alert('No match!');
+    }
+    this.filteredLocationList = this.housingLocationList.filter(
+      housingLocation => housingLocation?.city.toLowerCase().includes(filterText.toLowerCase())
+    );
   }
-  this.filteredLocationList = this.housingLocationList.filter(
-    housingLocation => housingLocation?.city.toLowerCase().includes(filterText.toLowerCase())
-  );
-}
 
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
@@ -46,8 +46,15 @@ filterResults(filterText: string) {
 
   filteredLocationList: HousingLocation[] = [];
 
-  constructor(){
-    this.housingLocationList = this.housingService.getAllHousingLocations();
-    this.filteredLocationList = this.housingLocationList;
+  // constructor() {
+  //   this.housingLocationList = this.housingService.getAllHousingLocations();
+  //   this.filteredLocationList = this.housingLocationList;
+  // }
+
+  constructor() {
+    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
+      this.housingLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList;
+    });
   }
 }
