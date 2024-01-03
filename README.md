@@ -27,9 +27,9 @@ Foram explorados os conceitos de componentes do framework para separar as respon
 ## Como Executar Localmente
 
 1. Clone o repositório
-2. Ao clonar e baixar para sua máquina local, instale as dependências do node com o comando npm install, dentro da pasta raiz do aplicativo.
-3. Inicie o json-server com o comando json-server --watch db.json
-4. Rode a aplicação utilizando o ng serve
+2. Ao clonar e baixar para sua máquina local, instale as dependências do node com o comando `npm install`, dentro da pasta raiz do aplicativo.
+3. Inicie o json server com o comando `json-server --watch db.json`
+4. Rode a aplicação utilizando o `ng serve`
 5. Acesse o seu navegador - preferencialmente o Chrome - com o endereço http://localhost:4200/
 
 ## Entre em contato comigo
@@ -65,10 +65,10 @@ Angular component concepts were employed to better organize and structure the ap
 ## How to Run Locally
 
 1. Clone the repository.
-2. After cloning and downloading to your local machine, install node dependencies with the command npm install in the application's root folder.
-3. Start the JSON server with the command json-server --watch db.json.
-4. Run the application using ng serve.
-5. Access your browser, preferably Chrome, at http://localhost:4200/.
+2. After cloning and downloading to your local machine, install node dependencies with the command `npm install` in the application's root folder.
+3. Start the JSON server with the command `json-server --watch db.json`
+4. Run the application using `ng serve`
+5. Access your browser at http://localhost:4200/.
 
 ## Contact Me
 
